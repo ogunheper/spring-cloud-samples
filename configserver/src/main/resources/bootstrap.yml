@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      enabled: false
+      server:
+        git:
+          uri: https://github.com/ogunheper/spring-cloud-samples-properties.git
