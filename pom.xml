@@ -55,5 +55,6 @@
     <modules>
         <module>simplemodule</module>
         <module>configserver</module>
+        <module>eureka</module>
     </modules>
 </project>
