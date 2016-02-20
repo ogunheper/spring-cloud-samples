@@ -1,6 +1,6 @@
 spring:
   application:
-    name: simplemodule
+    name: eureka
   profiles:
     active: prod
   cloud:
