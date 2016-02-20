@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: simplemodule
-  profiles:
-    active: prod
-  cloud:
-    config:
-      uri: http://localhost:8888
-      failFast: true

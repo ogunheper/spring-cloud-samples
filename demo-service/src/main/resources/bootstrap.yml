@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: demo-service
+  profiles:
+    active: prod
+  cloud:
+    config:
+      uri: http://localhost:8888
+      failFast: true

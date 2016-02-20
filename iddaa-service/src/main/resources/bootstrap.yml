@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: iddaa-service
+  profiles:
+    active: prod
+  cloud:
+    config:
+      uri: http://localhost:8888
+      failFast: true
+
+server:
+  port: 7070
