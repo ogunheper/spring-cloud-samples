@@ -7,6 +7,4 @@ spring:
     config:
       uri: http://localhost:8888
       failFast: true
-
-server:
-  port: 7070
+      label: ""

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: demo-service
+    name: hystrix-dashboard
   profiles:
     active: prod
   cloud:
