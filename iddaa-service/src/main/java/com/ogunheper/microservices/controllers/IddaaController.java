@@ -4,6 +4,7 @@ import com.ogunheper.microservices.clients.DemoServiceClient;
 import com.ogunheper.microservices.clients.IddaaServiceClient;
 import com.ogunheper.microservices.clients.PetStoreSwaggerClient;
 import com.ogunheper.microservices.services.CouponService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.lang.management.ManagementFactory;
 
+@Slf4j
 @RestController
 public class IddaaController {
 
@@ -53,7 +55,7 @@ public class IddaaController {
 
     @RequestMapping(value = "/who", method = RequestMethod.GET)
     public String who(@RequestHeader(value = "X-UserId", defaultValue = "") String userId) {
-        System.out.println("In IddaaController WHO - " + userId);
+        log.info("In IddaaController WHO; userId: {}", userId);
         return ManagementFactory.getRuntimeMXBean().getName() + " " + applicationContext.getId();
     }
 }

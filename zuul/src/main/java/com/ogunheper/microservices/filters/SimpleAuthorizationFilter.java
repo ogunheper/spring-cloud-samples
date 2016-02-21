@@ -2,6 +2,7 @@ package com.ogunheper.microservices.filters;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.ProxyRouteLocator;
 import org.springframework.cloud.netflix.zuul.filters.ProxyRouteLocator.ProxyRouteSpec;
@@ -10,11 +11,11 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Random;
 
-@Component
+@Slf4j
 public class SimpleAuthorizationFilter extends ZuulFilter {
 
     @Autowired
-    private ProxyRouteLocator routeLocator;
+    private ProxyRouteLocator proxyRouteLocator;
 
     @Override
     public String filterType() {
@@ -36,11 +37,11 @@ public class SimpleAuthorizationFilter extends ZuulFilter {
 
         final RequestContext requestContext = RequestContext.getCurrentContext();
         final String requestURI = requestContext.getRequest().getRequestURI();
-        final ProxyRouteSpec route = routeLocator.getMatchingRoute(requestURI);
+        final ProxyRouteSpec route = proxyRouteLocator.getMatchingRoute(requestURI);
 
-        System.out.println("requestContext: " + requestContext.toString());
-        System.out.println("requestURI    : " + requestURI.toString());
-        System.out.println("route         : " + route.toString());
+        log.info("requestContext: " + requestContext.toString());
+        log.info("requestURI    : " + requestURI.toString());
+        log.info("route         : " + route.toString());
 
         if (route != null) {
             final String authorization = requestContext.getRequest().getHeader("Authorization");
