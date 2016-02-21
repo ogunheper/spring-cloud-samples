@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Random;
 
 @Slf4j
+@Component
 public class SimpleAuthorizationFilter extends ZuulFilter {
 
     @Autowired
@@ -50,7 +51,6 @@ public class SimpleAuthorizationFilter extends ZuulFilter {
                 requestContext.addZuulRequestHeader("X-UserId", String.valueOf(new Random().nextLong()));
             } else {
                 requestContext.setSendZuulResponse(false);
-                requestContext.setResponseStatusCode(HttpServletResponse.SC_FORBIDDEN);
                 requestContext.set("error.status_code", HttpServletResponse.SC_FORBIDDEN);
             }
         }
