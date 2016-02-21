@@ -10,3 +10,11 @@ spring:
 
 server:
   port: 8888
+
+encrypt:
+  failOnError: true
+  keyStore:
+    location: classpath:/keys/server.jks
+    password: mykeystorepassword
+    secret: mykeypassword
+    alias: configserverkey

@@ -1,5 +1,6 @@
 package com.ogunheper.microservices.controllers;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.ogunheper.microservices.configuration.DemoServiceProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -28,6 +29,7 @@ public class DemoServiceController {
         return demoServiceProperties.getPassword();
     }
 
+    @HystrixCommand
     @RequestMapping(value = "/who", method = RequestMethod.GET)
     public String who() {
         return ManagementFactory.getRuntimeMXBean().getName() + " " + applicationContext.getId();
