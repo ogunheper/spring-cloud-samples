@@ -1,6 +1,6 @@
 package com.ogunheper.microservices.controllers;
 
-import com.ogunheper.microservices.services.PropertiesService;
+import com.ogunheper.microservices.configuration.DemoServiceProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,19 +13,19 @@ import java.lang.management.ManagementFactory;
 public class DemoServiceController {
 
     @Autowired
-    private PropertiesService propertiesService;
+    private DemoServiceProperties demoServiceProperties;
 
     @Autowired
     private ApplicationContext applicationContext;
 
     @RequestMapping(value = "/username", method = RequestMethod.GET)
     public String username() {
-        return propertiesService.getUsername();
+        return demoServiceProperties.getUsername();
     }
 
     @RequestMapping(value = "/password", method = RequestMethod.GET)
     public String password() {
-        return propertiesService.getPassword();
+        return demoServiceProperties.getPassword();
     }
 
     @RequestMapping(value = "/who", method = RequestMethod.GET)

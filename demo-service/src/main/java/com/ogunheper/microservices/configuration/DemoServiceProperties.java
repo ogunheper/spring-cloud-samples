@@ -1,15 +1,11 @@
 package com.ogunheper.microservices.configuration;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+@Data
 @Component
-@Getter
-@Setter
-@EnableConfigurationProperties
 @ConfigurationProperties(prefix = "demo.service")
 public class DemoServiceProperties {
 
