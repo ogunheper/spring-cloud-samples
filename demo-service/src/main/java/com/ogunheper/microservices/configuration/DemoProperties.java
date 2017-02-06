@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 @ConfigurationProperties(prefix = "demo.service")
-public class DemoServiceProperties {
+public class DemoProperties {
 
     private String username;
     private String password;

@@ -6,9 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class FinanceServiceApplication {
+public class FinanceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FinanceServiceApplication.class, args);
+        SpringApplication.run(FinanceApplication.class, args);
     }
 }

@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient(value = "demo-service")
-public interface DemoServiceClient {
+public interface DemoClient {
 
     @RequestMapping(value = "/who", method = RequestMethod.GET)
     String who();

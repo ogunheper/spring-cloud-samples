@@ -9,10 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>iddaa-service</artifactId>
+    <artifactId>user-service</artifactId>
 
-    <name>Iddaa Service Module</name>
-    <description>Iddaa Service Module</description>
+    <name>User Service Module</name>
+    <description>User Service Module</description>
 
     <dependencies>
         <dependency>
@@ -33,6 +33,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-hystrix-amqp</artifactId>
         </dependency>
 
         <dependency>
@@ -66,8 +71,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
+            <groupId>com.ogunheper.microservices</groupId>
+            <artifactId>user-service-client</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
